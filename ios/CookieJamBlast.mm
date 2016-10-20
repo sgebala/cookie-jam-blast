@@ -30,8 +30,4 @@
   return NO;
 }
 
-FN_BEGIN(CookieJamBlast)
-FN(<#fn#>, <#SEL#>)
-FN_END
-
 @end

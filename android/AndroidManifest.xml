@@ -3,4 +3,15 @@
       package="com.sgn.cookieJamBlast"
       android:versionCode="1"
       android:versionName="1.0">
+      <manifestAdditions><![CDATA[
+          <manifest android:installLocation="auto">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <application android:enabled="true" @ANDROID_DEBUGGABLE@>
+              <activity android:name="com.jesusla.ane.CustomActivity"/>
+              <meta-data android:name="" android:value=""/>
+            </application>
+          </manifest>
+        ]]></manifestAdditions>
 </manifest>
+
+

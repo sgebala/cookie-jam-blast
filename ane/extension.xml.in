@@ -1,0 +1,30 @@
+<extension xmlns="http://ns.adobe.com/air/extension/4.0">
+  <id>@EXT_ID@</id>
+  <versionNumber>@VERSION@.@REVISION@</versionNumber>
+  <description>@NAME@ r@REVISION@ (@COMMIT@)</description>
+  <platforms>
+    <platform name="iPhone-ARM">
+      <applicationDeployment>
+        <nativeLibrary>@ANE_IOS_LIB@</nativeLibrary>
+        <initializer>ExtInitializer</initializer>
+        <finalizer>ExtFinalizer</finalizer>
+      </applicationDeployment>
+    </platform>
+    <platform name="iPhone-x86">
+      <applicationDeployment>
+        <nativeLibrary>@ANE_IOS_LIB@</nativeLibrary>
+        <initializer>ExtInitializer</initializer>
+        <finalizer>ExtFinalizer</finalizer>
+      </applicationDeployment>
+    </platform>
+    <platform name="Android-ARM">
+      <applicationDeployment>
+        <nativeLibrary>@ANE_ANDROID_JAR@</nativeLibrary>
+        <initializer>com.jesusla.ane.Extension</initializer>
+      </applicationDeployment>
+    </platform>
+    <platform name="default">
+      <applicationDeployment/>
+    </platform>
+  </platforms>
+</extension>

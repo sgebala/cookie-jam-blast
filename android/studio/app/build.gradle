@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://artifactory.sgn.com/artifactory/repo/"
+            credentials {
+                username mavenUser
+                password mavenPassword
+            }
+        }
+    }
+    dependencies {
+        classpath group: 'com.sgn.utils', name: 'android-config-reader', version: '1.0'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+ext {
+    androidDependenciesFilePath = "${project.projectDir}/../../dependencies"
+    androidPropertiesFilePath = "${project.projectDir}/../../android.properties"
+}
+
+configurations.create("dependenciesWithResources")
+configurations.create("embedOnJar")
+
+dependencies {
+    embedOnJar configurations.dependenciesWithResources
+    compile configurations.embedOnJar
+}
+
+repositories {
+    maven {
+        url "https://artifactory.sgn.com/artifactory/repo/"
+        credentials {
+            username mavenUser
+            password mavenPassword
+        }
+    }
+}
+
+apply plugin: 'androidConfigReader'
+
+android {
+    compileSdkVersion androidConfig.compileSdkVersion
+    buildToolsVersion androidConfig.buildToolsVersion
+
+    defaultConfig {
+        applicationId "android.studio.app"
+        minSdkVersion androidConfig.minSdkVersion
+        targetSdkVersion androidConfig.targetSdkVersion
+        versionCode androidConfig.versionCode
+        versionName androidConfig.versionName
+    }
+    sourceSets {
+        main {
+            manifest.srcFile('../../AndroidManifest.xml')
+            java.srcDir('../../src')
+        }
+    }
+}

@@ -1,0 +1,6 @@
+[submodule "lib/ane"]
+	path = lib/ane
+	url = git@github.com:mindjolt/ane-helper.git
+[submodule "tools"]
+	path = tools
+	url = git@github.com:mindjolt/ane-tools.git

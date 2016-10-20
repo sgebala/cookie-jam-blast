@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<application xmlns="http://ns.adobe.com/air/application/20.0">
+  <id>com.sgn.cookieJamBlast.test</id>
+  <filename>CookieJamBlast</filename>
+  <name>CookieJamBlast</name>
+  <versionNumber>1.0</versionNumber>
+  <versionLabel>1.0 (test)</versionLabel>
+  <initialWindow>
+    <content>Main.swf</content>
+    <visible>true</visible>
+    <aspectRatio>portrait</aspectRatio>
+    <autoOrients>true</autoOrients>
+    <fullScreen>true</fullScreen>
+    <softKeyboardBehavior>none</softKeyboardBehavior>
+  </initialWindow>
+  <icon>
+      <image114x114>icon-114x114.png</image114x114>
+      <image57x57>icon-57x57.png</image57x57>
+      <image29x29>icon-29x29.png</image29x29>
+      <image48x48>icon-48x48.png</image48x48>
+      <image72x72>icon-72x72.png</image72x72>
+  </icon>
+  <supportedProfiles>mobileDevice</supportedProfiles>
+
+  <iPhone>
+    <InfoAdditions>
+      <![CDATA[
+        <key>UIDeviceFamily</key><array><string>1</string><string>2</string></array>
+        <key>UIApplicationExitsOnSuspend</key><false/>
+        <key>UIPrerenderedIcon</key><true/>
+        <key>ANEDebug</key><true/>
+      ]]>
+    </InfoAdditions>
+    <requestedDisplayResolution>high</requestedDisplayResolution>
+  </iPhone>
+
+  <android>
+    <colorDepth>16bit</colorDepth>
+    <manifestAdditions><![CDATA[
+      <manifest android:installLocation="auto">
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <application android:enabled="true" android:debuggable="true">
+          <activity android:name="com.jesusla.ane.CustomActivity"/>
+          <meta-data android:name="ANEDebug" android:value="true"/>
+        </application>
+      </manifest>
+    ]]></manifestAdditions>
+  </android>
+
+  <extensions>
+    <extensionID>com.sgn.cookieJamBlast</extensionID>
+    <extensionID>com.jesusla.ane</extensionID>
+  </extensions>
+</application>

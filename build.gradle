@@ -1,0 +1,7 @@
+apply from: 'https://s3.amazonaws.com/game-services/ane-1.8.plugin'
+
+ane {
+    module = 'com.sgn.cookieJamBlast'
+    name = 'CookieJamBlast'
+    uploadGroupId = 'com.sgn.ane'
+}

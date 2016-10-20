@@ -1,0 +1,9 @@
+.DS_Store
+*.mode1v3
+*.pbxuser
+*.xcworkspace
+xcuserdata/
+.*.swp
+.gradle/
+build/
+test/external

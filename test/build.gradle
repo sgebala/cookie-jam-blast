@@ -1,0 +1,15 @@
+allprojects {
+	repositories {
+	    maven {
+	        url "https://artifactory.sgn.com/artifactory/repo/"
+	        credentials {
+	            username mavenUser
+	            password mavenPassword
+	        }
+	    }
+	}
+}
+
+project.ext {
+    externalFiles = ['com.sgn.ane:nativelibrary:1.0.61:ane']
+}
